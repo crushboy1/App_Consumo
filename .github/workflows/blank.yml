@@ -29,8 +29,12 @@ jobs:
         run: echo 'Prueba'
         
       - name: 'Mostrar variables de entorno'
-        if: ${{ env.platform != 'aws' }} 
+        # if: ${{ env.platform != 'aws' }} 
         run: |
           echo 'La plataforma es: ${{env.platform}}' 
           echo 'la región es: ${{env.region}}'
           echo 'y la account es: ${{env.account}}'
+
+      - name: 'Mostrando variables por defecto'
+        run: |
+          echo  'Evento: ${{toJSON(github.event)}}'

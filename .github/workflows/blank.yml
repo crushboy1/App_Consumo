@@ -30,6 +30,6 @@ jobs:
         
       - name: 'Mostrar variables de entorno'
         run: |
-          'La plataforma es: ${{env.platform}}, 
+          echo 'La plataforma es: ${{env.platform}}, 
           la región es: ${{env.region}} 
           y la account es: ${{env.account}} '

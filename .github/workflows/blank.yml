@@ -22,6 +22,10 @@ jobs:
       region: us-west-1
       account: 123456789
 
+      username: ${{secrets.USERNAME}}
+      password: ${{secrets.PASSWORD}}
+
+
     runs-on: ubuntu-latest
 
     steps:
@@ -29,12 +33,12 @@ jobs:
         run: echo 'Prueba'
         
       - name: 'Mostrar variables de entorno'
-        # if: ${{ env.platform != 'aws' }} 
         run: |
           echo 'La plataforma es: ${{env.platform}}' 
           echo 'la región es: ${{env.region}}'
           echo 'y la account es: ${{env.account}}'
-
+          echo 'este es el valor de username : ${{env.username}}'
+          echo 'este es el valor de password : ${{env.password}}'
       - name: 'Mostrando variables por defecto'
         run: |
           echo  'Evento: ${{toJSON(github.event)}}'

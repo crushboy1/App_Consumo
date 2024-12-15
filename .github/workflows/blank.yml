@@ -29,6 +29,7 @@ jobs:
         run: echo 'Prueba'
         
       - name: 'Mostrar variables de entorno'
+        if: ${{ env.platform != 'aws' }} 
         run: |
           echo 'La plataforma es: ${{env.platform}}' 
           echo 'la región es: ${{env.region}}'
